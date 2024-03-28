@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	podman build -f Containerfile -t ghcr.io/ai-lab-recipes/playground --format docker .
+	podman build -f Containerfile -t ghcr.io/ai-lab-recipes/playground .
 
 models/llama-2-7b-chat.Q5_K_S.gguf:
 	curl -s -S -L -f https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/resolve/main/llama-2-7b-chat.Q5_K_S.gguf -z $@ -o $@.tmp && mv -f $@.tmp $@ 2>/dev/null || rm -f $@.tmp $@
