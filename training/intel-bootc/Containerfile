@@ -46,7 +46,7 @@ RUN . /etc/os-release \
     && depmod -a ${KERNEL_VERSION}.${TARGET_ARCH}
 
 RUN mv /etc/selinux /etc/selinux.tmp \
-    dnf install -y ${EXTRA_RPM_PACKAGES} \
+    && dnf install -y ${EXTRA_RPM_PACKAGES} \
     cloud-init \
     rsync \
     && dnf clean all \
